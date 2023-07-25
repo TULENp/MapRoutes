@@ -52,4 +52,7 @@ npx vite
 - Отображение карты
 - Выбор маршрута (клик по строке) и отображение его кратчайшего пути на карте 
 
+![def](https://github.com/TULENp/MapRoutes/assets/83094079/7295e348-f0bd-4364-b3a2-018bb89eac6f)
+![select](https://github.com/TULENp/MapRoutes/assets/83094079/3f9785f2-323b-4063-8d8c-1b5131509f9d)
+
 
