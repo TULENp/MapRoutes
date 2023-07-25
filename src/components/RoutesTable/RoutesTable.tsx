@@ -3,10 +3,13 @@ import Column from "antd/es/table/Column"
 import { setRoute } from "../../store/reducers/routeSlice"
 import { useAppDispatch } from "../../hooks/redux"
 import { data } from "../../dataExample/data"
+import { useState } from "react"
 
+//* Display table with routes
 export function RoutesTable() {
     const dispatch = useAppDispatch()
-
+    const [selectedRowKey, setSelectedRowKey] = useState<number[]>([]) // index of selected row
+    
     const dataSource = data.map((item) => ({
         key: item.id,
         routeName: item.routeName,
@@ -19,10 +22,13 @@ export function RoutesTable() {
     return (
         <>
             <Table dataSource={dataSource}
-                rowSelection={{ type: 'radio' }}
+                
+                title={() => <b>Выберите маршрут</b>}
+                rowSelection={{ selectedRowKeys: selectedRowKey, type: 'radio' }}
                 onRow={(record) => {
                     return {
                         onClick: () => {
+                            setSelectedRowKey([record.key])
                             dispatch(setRoute(data[record.key].routes))
                         }
                     }

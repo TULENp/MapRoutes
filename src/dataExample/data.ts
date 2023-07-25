@@ -1,6 +1,5 @@
 import { TTableData } from "../types"
 
-
 export const data: TTableData[] = [
     {
         id: 0,
